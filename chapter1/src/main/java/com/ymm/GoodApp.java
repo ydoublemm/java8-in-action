@@ -2,8 +2,14 @@ package com.ymm;
 
 import com.ymm.page11.Apple;
 
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
@@ -28,9 +34,9 @@ public class GoodApp {
 
 	public static void main(String[] args) {
 		List<Apple> list = filterApple(GoodApp.list, Apple::isGreen);
-		List<Apple> list1 = filterApple(GoodApp.list, apple -> apple.getColor().equals("red"));
+		//List<Apple> list1 = filterApple(GoodApp.list, apple -> apple.getColor().equals("red"));
 
-		System.out.println(list);
+		//System.out.println(list);
 	}
 
 
@@ -50,6 +56,24 @@ public class GoodApp {
 				list.add(apple);
 			}
 		}
+		Collections.sort(inventory, new Comparator<Apple>() {
+			@Override
+			public int compare(Apple o1, Apple o2) {
+				return o1.getWeight()-o2.getWeight();
+			}
+		});
+
+		Collections.sort(inventory, Comparator.comparingInt(Apple::getWeight));
+
+		inventory.sort(Comparator.comparingInt(Apple::getWeight));
+
+		inventory.sort(Comparator.comparing(Apple::getColor));
+
+		System.out.println(inventory);
+
+		Runnable runnable = () -> System.out.println(11);
+
+
 
 		return list;
 	}
