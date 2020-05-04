@@ -2,14 +2,10 @@ package com.ymm;
 
 import com.ymm.page11.Apple;
 
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
@@ -67,7 +63,9 @@ public class GoodApp {
 
 		inventory.sort(Comparator.comparingInt(Apple::getWeight));
 
-		inventory.sort(Comparator.comparing(Apple::getColor));
+		inventory.sort(Comparator.comparing(Apple::getColor).thenComparing(Apple::getWeight));
+
+
 
 		System.out.println(inventory);
 
