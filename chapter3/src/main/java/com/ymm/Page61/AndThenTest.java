@@ -1,6 +1,8 @@
 package com.ymm.Page61;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.function.DoubleToIntFunction;
 import java.util.function.Function;
 import java.util.function.IntUnaryOperator;
@@ -27,7 +29,11 @@ public class AndThenTest {
 		Function<String, Integer> bitCount = Integer::parseInt;
 
 
-		
+		new HashSet<String>()
+				.stream()
+				.mapToInt(Integer::parseInt)
+				.boxed()
+				.findAny()
 
 
 
