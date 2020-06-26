@@ -1,14 +1,7 @@
 package com.ymm.Page61;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.function.DoubleToIntFunction;
 import java.util.function.Function;
 import java.util.function.IntUnaryOperator;
-import java.util.function.Supplier;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 /**
  * Created by yemingming on 2019-11-25.
@@ -29,11 +22,7 @@ public class AndThenTest {
 		Function<String, Integer> bitCount = Integer::parseInt;
 
 
-		new HashSet<String>()
-				.stream()
-				.mapToInt(Integer::parseInt)
-				.boxed()
-				.findAny()
+
 
 
 

@@ -11,6 +11,8 @@
     <modules>
         <module>chapter1</module>
         <module>chapter3</module>
+        <module>chapter5</module>
+        <module>chapter6</module>
     </modules>
 
     <name>java8-in-action</name>
