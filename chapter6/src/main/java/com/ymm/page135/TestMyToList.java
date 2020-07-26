@@ -4,6 +4,7 @@ import com.ymm.page115.pojo.Dish;
 import com.ymm.page115.pojo.Menu;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,6 +31,8 @@ public class TestMyToList {
                 .filter(Dish::isVegetarian)
                 .collect(ArrayList::new, List::add,
                         List::addAll);
+
+
     }
 
 }
